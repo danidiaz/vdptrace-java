@@ -48,9 +48,45 @@
 			   </execution>
 		   </executions>
 	   </plugin>
+	   <plugin>
+		   <!-- https://maven.apache.org/plugins/maven-dependency-plugin/usage.html -->
+		   <groupId>org.apache.maven.plugins</groupId>
+		   <artifactId>maven-dependency-plugin</artifactId>
+		   <version>3.0.0</version>
+		   <executions>
+			   <execution>
+				   <id>copy-dependencies</id>
+				   <phase>package</phase>
+				   <goals>
+					   <goal>copy-dependencies</goal>
+				   </goals>
+				   <configuration>
+					   <!-- configure the plugin here -->
+				   </configuration>
+			   </execution>
+		   </executions>
+	   </plugin>
     </plugins>
   </build>
   <dependencies>
+	<!-- is this dep needed -->
+	<dependency>
+		<groupId>org.scala-lang</groupId>
+        <!-- https://davidb.github.io/scala-maven-plugin/usage.html
+             Since version 2.7 of the plugin, the scala version to use is
+             detected from dependency to scala-library. So it suggested to not
+             use scalaVersion configuration.
+             -->
+		<artifactId>scala-library</artifactId>
+		<version>2.12.1</version>
+	</dependency>
+	<dependency>
+        <!-- https://github.com/scala/scala-parser-combinators -->
+        <!-- https://enear.github.io/2016/03/31/parser-combinators/  -->
+		<groupId>org.scala-lang.modules</groupId>
+		<artifactId>scala-parser-combinators_2.12</artifactId>
+		<version>1.0.5</version>
+	</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
