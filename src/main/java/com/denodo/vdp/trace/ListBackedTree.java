@@ -3,13 +3,13 @@ package com.denodo.vdp.trace;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class ArrayBackedTree<T> implements Tree<T> {
+public class ListBackedTree<T> implements Tree<T> {
 
 	private T node;
 	
 	private List<Tree<T>> children;
 
-	public ArrayBackedTree(T root, List<Tree<T>> children) {
+	public ListBackedTree(T root, List<Tree<T>> children) {
 		super();
 		this.node = root;
 		this.children = children;
