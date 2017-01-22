@@ -25,6 +25,21 @@
 			   <target>1.8</target>
 		   </configuration>
 	   </plugin>
+       <!--
+       <plugin>
+           <groupId>org.antlr</groupId>
+           <artifactId>antlr4-maven-plugin</artifactId>
+           <version>4.3</version>
+           <executions>
+               <execution>
+                   <id>antlr</id>
+                   <goals>
+                       <goal>antlr4</goal>
+                   </goals>
+               </execution>
+           </executions>
+       </plugin>
+       -->
 	   <plugin>
 		   <groupId>net.alchim31.maven</groupId>
 		   <artifactId>scala-maven-plugin</artifactId>
@@ -77,6 +92,7 @@
              detected from dependency to scala-library. So it suggested to not
              use scalaVersion configuration.
              -->
+        <!-- http://scala-ide.org/blog/scala-installations.html#BYOS -->
 		<artifactId>scala-library</artifactId>
 		<version>2.12.1</version>
 	</dependency>
