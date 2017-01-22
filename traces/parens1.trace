@@ -1,0 +1,66 @@
+EXECUTION PLAN (
+	name = Execution
+	startTime = Sun Jan 22 11:04:12 342 CET 2017
+	endTime = Sun Jan 22 11:04:12 350 CET 2017
+	responseTime = Sun Jan 22 11:04:12 349 CET 2017
+	numRows = 1
+	state = OK
+	completed = true
+	waitingTime = 0
+	STATIC OPTIMIZATION (
+		staticOptimized = false
+		staticOptimizationTime = 2
+		staticOptimizationStart = Sun Jan 22 11:04:12 344 CET 2017
+		staticOptimizationEnd = Sun Jan 22 11:04:12 346 CET 2017
+	)
+	PROJECTION PLAN (
+		name = _p_dual_71754026869625951309182818082260102729765127156112973817954392378813417283953134359423056724
+		database = admin
+		startTime = Sun Jan 22 11:04:12 348 CET 2017
+		endTime = Sun Jan 22 11:04:12 350 CET 2017
+		responseTime = Sun Jan 22 11:04:12 349 CET 2017
+		numRows = 1
+		state = OK
+		completed = true
+		fields = [foo, bar]
+		search conditions = []
+		filter conditions = []
+		orderByFields = []
+		ordered = false
+		numOfFilteredTuples = 0
+		numOfDuplicatedTuples = 0
+		numOfSwappedTuples = 0
+		swapping = false
+		memoryLimitReached = false
+		projectedFields = [substr('foo', 2) AS foo, substr('bar', 1) AS bar]
+		STORED_PROCEDURE PLAN (
+			name = dual
+			database = admin
+			startTime = Sun Jan 22 11:04:12 348 CET 2017
+			endTime = Sun Jan 22 11:04:12 349 CET 2017
+			responseTime = Sun Jan 22 11:04:12 349 CET 2017
+			numRows = 1
+			state = OK
+			completed = true
+			fields = []
+			search conditions = []
+			filter conditions = []
+			ordered = false
+			numOfFilteredTuples = 0
+			numOfDuplicatedTuples = 0
+			numOfSwappedTuples = 0
+			swapping = false
+			STORED PROCEDURE (
+				name = dual
+				startTime = Sun Jan 22 11:04:12 348 CET 2017
+				endTime = Sun Jan 22 11:04:12 349 CET 2017
+				responseTime = Sun Jan 22 11:04:12 349 CET 2017
+				numRows = 1
+				state = OK
+				completed = true
+				inputValues = []
+			)
+		)
+	)
+)
+

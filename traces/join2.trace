@@ -1,0 +1,198 @@
+EXECUTION PLAN (
+	name = Execution
+	startTime = Sun Jan 22 10:58:49 806 CET 2017
+	endTime = Sun Jan 22 10:58:49 843 CET 2017
+	responseTime = -
+	numRows = 0
+	state = OK
+	completed = true
+	waitingTime = 0
+	STATIC OPTIMIZATION (
+		staticOptimized = false
+		staticOptimizationTime = 15
+		staticOptimizationStart = Sun Jan 22 10:58:49 808 CET 2017
+		staticOptimizationEnd = Sun Jan 22 10:58:49 823 CET 2017
+	)
+	PROJECTION PLAN (
+		name = p_aaa_j_bbb_2
+		database = admin
+		startTime = Sun Jan 22 10:58:49 833 CET 2017
+		endTime = Sun Jan 22 10:58:49 843 CET 2017
+		responseTime = -
+		numRows = 0
+		state = OK
+		completed = true
+		fields = [aid, aval, bid, bval, conc]
+		search conditions = []
+		filter conditions = []
+		orderByFields = []
+		ordered = false
+		numOfFilteredTuples = 0
+		numOfDuplicatedTuples = 0
+		numOfSwappedTuples = 0
+		swapping = false
+		memoryLimitReached = false
+		projectedFields = [aid AS aid, aval AS aval, bid AS bid, bval AS bval, (aval||aval||aval) AS conc]
+		PROJECTION PLAN (
+			name = aaa_j_bbb_2
+			database = admin
+			startTime = Sun Jan 22 10:58:49 834 CET 2017
+			endTime = Sun Jan 22 10:58:49 842 CET 2017
+			responseTime = -
+			numRows = 0
+			state = OK
+			completed = true
+			fields = [aid, aval, bid, bval]
+			search conditions = []
+			filter conditions = []
+			orderByFields = [aid ASC, aval ASC, bid ASC, bval ASC]
+			ordered = true
+			numOfFilteredTuples = 0
+			numOfDuplicatedTuples = 0
+			numOfSwappedTuples = 0
+			swapping = false
+			distinct = true
+			projectedFields = [aaa.aid AS aid, aaa.aval AS aval, bbb.bid AS bid, bbb.bval AS bval]
+			SELECTION PLAN (
+				name = _aaa_j_bbb_2_s__j__491182059865678028708982103709157386734272207518027543972872160544169150842580634
+				database = admin
+				startTime = Sun Jan 22 10:58:49 835 CET 2017
+				endTime = Sun Jan 22 10:58:49 842 CET 2017
+				responseTime = -
+				numRows = 0
+				state = OK
+				completed = true
+				fields = [aaa.aid, aaa.aval, bbb.bid, bbb.bval]
+				search conditions = []
+				filter conditions = []
+				orderByFields = []
+				ordered = false
+				numOfFilteredTuples = 0
+				numOfDuplicatedTuples = 0
+				numOfSwappedTuples = 0
+				swapping = false
+				selectCondition = (bbb.bval <= '10000' AND bbb.bval <= '10001')
+				INNER JOIN PLAN (
+					name = _aaa_j_bbb_2_aaa_637041582038755695071983348598785830325522041382002969607822729239419829_4236885098
+					database = admin
+					startTime = Sun Jan 22 10:58:49 836 CET 2017
+					endTime = Sun Jan 22 10:58:49 842 CET 2017
+					responseTime = -
+					numRows = 0
+					state = OK
+					completed = true
+					fields = [aaa.aid, aaa.aval, bbb.bid, bbb.bval]
+					search conditions = [bbb.bval <= '10000', bbb.bval <= '10001', aaa.aid is not null , bbb.bid is not null ]
+					filter conditions = []
+					orderByFields = []
+					ordered = false
+					numOfFilteredTuples = 0
+					numOfDuplicatedTuples = 0
+					numOfSwappedTuples = 0
+					swapping = false
+					type = HASH
+					fstJoinFields = [aid]
+					sndJoinFields = [bid]
+					joinOperators = [=]
+					joinCondition = aid = bid
+					BASE PLAN (
+						name = aaa
+						database = admin
+						startTime = Sun Jan 22 10:58:49 836 CET 2017
+						endTime = Sun Jan 22 10:58:49 840 CET 2017
+						responseTime = Sun Jan 22 10:58:49 840 CET 2017
+						numRows = 2
+						state = OK
+						completed = true
+						fields = [aid, aval]
+						search conditions = []
+						filter conditions = [aid is not null ]
+						ordered = false
+						numOfFilteredTuples = 0
+						numOfDuplicatedTuples = 0
+						numOfSwappedTuples = 0
+						swapping = false
+						memoryLimitReached = false
+						DF WRAPPER (
+							name = aaa
+							database = admin
+							startTime = Sun Jan 22 10:58:49 837 CET 2017
+							endTime = Sun Jan 22 10:58:49 840 CET 2017
+							responseTime = Sun Jan 22 10:58:49 840 CET 2017
+							numRows = 2
+							state = OK
+							completed = true
+							searchConditions = []
+							orderByFields = []
+							projectedFields = [aid, aval]
+							additionalSubPlans = 0
+							additionalErroneousSubPlans = 0
+							LOCAL ROUTE (
+								name = aaa#0
+								datasource = aaa
+								datasource database = admin
+								startTime = Sun Jan 22 10:58:49 839 CET 2017
+								endTime = Sun Jan 22 10:58:49 840 CET 2017
+								responseTime = Sun Jan 22 10:58:49 840 CET 2017
+								numRows = 2
+								state = OK
+								completed = true
+								invalidTuples = 0
+								numRoute = 0
+								route = Local route -  filename: 'C:/Users/ESDPC/java/vdptrace-java/traces/datasources/aaa.csv' connection class: 'com.denodo.parser.connection.LocalConnection'
+							)
+						)
+					)
+					BASE PLAN (
+						name = bbb
+						database = admin
+						startTime = Sun Jan 22 10:58:49 837 CET 2017
+						endTime = Sun Jan 22 10:58:49 841 CET 2017
+						responseTime = -
+						numRows = 0
+						state = OK
+						completed = true
+						fields = [bid, bval]
+						search conditions = []
+						filter conditions = [bval <= '10000', bval <= '10001', bid is not null ]
+						ordered = false
+						numOfFilteredTuples = 2
+						numOfDuplicatedTuples = 0
+						numOfSwappedTuples = 0
+						swapping = false
+						DF WRAPPER (
+							name = bbb_9791
+							database = admin
+							startTime = Sun Jan 22 10:58:49 838 CET 2017
+							endTime = Sun Jan 22 10:58:49 841 CET 2017
+							responseTime = Sun Jan 22 10:58:49 841 CET 2017
+							numRows = 2
+							state = OK
+							completed = true
+							searchConditions = []
+							orderByFields = []
+							projectedFields = [bid, bval]
+							additionalSubPlans = 0
+							additionalErroneousSubPlans = 0
+							LOCAL ROUTE (
+								name = bbb_9791#0
+								datasource = bbb
+								datasource database = admin
+								startTime = Sun Jan 22 10:58:49 839 CET 2017
+								endTime = Sun Jan 22 10:58:49 841 CET 2017
+								responseTime = Sun Jan 22 10:58:49 841 CET 2017
+								numRows = 2
+								state = OK
+								completed = true
+								invalidTuples = 0
+								numRoute = 0
+								route = Local route -  filename: 'C:/Users/ESDPC/java/vdptrace-java/traces/datasources/bbb.csv' connection class: 'com.denodo.parser.connection.LocalConnection'
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+)
+
